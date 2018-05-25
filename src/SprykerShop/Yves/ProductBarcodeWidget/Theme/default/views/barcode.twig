@@ -1,0 +1,10 @@
+{% extends template('widget') %}
+
+{% define data = {
+    productSku: _widget.productSku,
+    barcodeResponseTransfer: _widget.barcodeResponseTransfer
+} %}
+
+{% block body %}
+    <img src="{{ data.barcodeResponseTransfer.getEncoding }},{{ data.barcodeResponseTransfer.getCode }}" />
+{% endblock %}
