@@ -16,37 +16,21 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class ProductBarcodeWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     * @param string|null $barcodeGeneratorPlugin
-     */
     public function __construct(ProductViewTransfer $productViewTransfer, ?string $barcodeGeneratorPlugin = null)
     {
         $this->addParameter('barcodeResponseTransfer', $this->getBarcodeResponseTransfer($productViewTransfer, $barcodeGeneratorPlugin));
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductBarcodeWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductBarcodeWidget/views/barcode/barcode.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     * @param string|null $barcodeGeneratorPlugin
-     *
-     * @return \Generated\Shared\Transfer\BarcodeResponseTransfer
-     */
     protected function getBarcodeResponseTransfer(ProductViewTransfer $productViewTransfer, ?string $barcodeGeneratorPlugin): BarcodeResponseTransfer
     {
         $sku = $productViewTransfer->requireSku()->getSku();

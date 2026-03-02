@@ -18,11 +18,6 @@ class ProductBarcodeWidgetDependencyProvider extends AbstractBundleDependencyPro
      */
     public const CLIENT_PRODUCT_BARCODE = 'CLIENT_PRODUCT_BARCODE';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = $this->addProductBarcodeClient($container);
@@ -30,11 +25,6 @@ class ProductBarcodeWidgetDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addProductBarcodeClient(Container $container): Container
     {
         $container->set(static::CLIENT_PRODUCT_BARCODE, function (Container $container) {

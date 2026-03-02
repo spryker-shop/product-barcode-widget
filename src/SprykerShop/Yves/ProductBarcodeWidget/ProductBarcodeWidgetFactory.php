@@ -12,9 +12,6 @@ use SprykerShop\Yves\ProductBarcodeWidget\Dependency\Client\ProductBarcodeWidget
 
 class ProductBarcodeWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\ProductBarcodeWidget\Dependency\Client\ProductBarcodeWidgetToProductBarcodeClientInterface
-     */
     public function getProductBarcodeClient(): ProductBarcodeWidgetToProductBarcodeClientInterface
     {
         return $this->getProvidedDependency(ProductBarcodeWidgetDependencyProvider::CLIENT_PRODUCT_BARCODE);

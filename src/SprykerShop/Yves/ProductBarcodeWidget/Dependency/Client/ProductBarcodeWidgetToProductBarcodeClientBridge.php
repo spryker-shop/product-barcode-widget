@@ -24,12 +24,6 @@ class ProductBarcodeWidgetToProductBarcodeClientBridge implements ProductBarcode
         $this->productBarcodeClient = $productBarcodeClient;
     }
 
-    /**
-     * @param string $sku
-     * @param string|null $barcodeGeneratorPlugin
-     *
-     * @return \Generated\Shared\Transfer\BarcodeResponseTransfer
-     */
     public function generateBarcodeBySku(
         string $sku,
         ?string $barcodeGeneratorPlugin = null
