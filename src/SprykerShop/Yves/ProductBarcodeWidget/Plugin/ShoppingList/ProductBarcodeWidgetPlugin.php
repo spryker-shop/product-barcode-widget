@@ -19,6 +19,11 @@ use SprykerShop\Yves\ShoppingListPage\Dependency\Plugin\ProductBarcodeWidget\Pro
  */
 class ProductBarcodeWidgetPlugin extends AbstractWidgetPlugin implements ProductBarcodeWidgetPluginInterface
 {
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public function initialize(ProductViewTransfer $productViewTransfer, ?string $barcodeGeneratorPlugin = null): void
     {
         $widget = new ProductBarcodeWidget($productViewTransfer, $barcodeGeneratorPlugin);
@@ -26,11 +31,21 @@ class ProductBarcodeWidgetPlugin extends AbstractWidgetPlugin implements Product
         $this->parameters = $widget->getParameters();
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getName(): string
     {
         return static::NAME;
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     */
     public static function getTemplate(): string
     {
         return ProductBarcodeWidget::getTemplate();
